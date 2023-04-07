@@ -71,3 +71,9 @@ if is_wsl then
     augroup END
   ]]
 end
+
+-- handlle neovide settings
+if vim.g.neovide then
+  vim.g.neovide_transparency = 0.85
+  vim.g.neovide_cursor_animation_length = 0
+end
