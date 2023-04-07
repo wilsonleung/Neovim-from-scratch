@@ -69,7 +69,7 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- Delete a word backwards
-keymap('n', 'dw', 'vb"_d', opts)
+-- keymap('n', 'dw', 'vb"_d', opts)
 
 -- Select all
 keymap('n', '<C-a>', 'gg<S-v>G', opts)
