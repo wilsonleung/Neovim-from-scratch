@@ -20,7 +20,8 @@ local diagnostics = {
 local diff = {
 	"diff",
 	colored = false,
-	symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
+	symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
+
   cond = hide_in_width
 }
 
@@ -49,14 +50,14 @@ local location = {
 }
 
 -- cool function for progress
-local progress = function()
+--[[ local progress = function()
 	local current_line = vim.fn.line(".")
 	local total_lines = vim.fn.line("$")
 	local chars = { "__", "▁▁", "▂▂", "▃▃", "▄▄", "▅▅", "▆▆", "▇▇", "██" }
 	local line_ratio = current_line / total_lines
 	local index = math.ceil(line_ratio * #chars)
 	return chars[index]
-end
+end ]]
 
 local spaces = function()
 	return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
@@ -78,7 +79,7 @@ lualine.setup({
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
 		lualine_x = { diff, spaces, "encoding", filetype },
 		lualine_y = { location },
-		lualine_z = { progress },
+		lualine_z = { 'progress' },
 	},
 	inactive_sections = {
 		lualine_a = {},
